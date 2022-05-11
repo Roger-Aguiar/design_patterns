@@ -18,9 +18,13 @@ executeFactory(new ConcreteCircle(), 9);*/
 function executeAbastractFactory(factory: AbstractFactory){
     const square = factory.createSquare();
     const circle = factory.createCircle();
+    const triangle = factory.createTriangle();
+    const rectangle = factory.createRectangle();
 
     console.log(`Area of the square with side 5: ${square.calculateArea()}`);
     console.log(`Area of the circle with radius 5: ${circle.calculateArea()}`);
+    console.log(`Area of the triangle with base equal 10 and height equal 2: ${triangle.calculateArea()}`);
+    console.log(`Area of the rectangle with length equal 10 and height equal 2: ${rectangle.calculateArea()}`);
 }
 
 console.log("Client testing the Abstract Factory...");
