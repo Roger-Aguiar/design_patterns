@@ -7,8 +7,14 @@ var Director = /** @class */ (function () {
     Director.prototype.setSquareBuilder = function (squareBuilder) {
         this.squareBuilder = squareBuilder;
     };
+    Director.prototype.setRectangleBuilder = function (rectangleBuilder) {
+        this.rectangleBuilder = rectangleBuilder;
+    };
     Director.prototype.buildSquare = function () {
         this.squareBuilder.createSquare();
+    };
+    Director.prototype.buildRectangle = function () {
+        this.rectangleBuilder.createRectangle();
     };
     return Director;
 }());

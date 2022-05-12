@@ -1,6 +1,7 @@
 import { ConcreteShape } from "./AbstractFactory/classes/concrete.shape";
 import { AbstractFactory } from "./AbstractFactory/interfaces/abstract.factory";
 import { Director } from "./Builder/classes/director";
+import { ConcreteRectangleBuilder } from "./Builder/classes/rectangle.builder";
 import { ConcreteSquareBuilder } from "./Builder/classes/square.builder";
 import { ConcreteCircle } from "./Factory/concrete_creator_classes/concrete.circle";
 import { ConcreteSquare } from "./Factory/concrete_creator_classes/concrete.square";
@@ -23,17 +24,28 @@ function executeAbastractFactory(factory: AbstractFactory){
     console.log(`Area of the rectangle with length equal 10 and height equal 2: ${rectangle.calculateArea()}`);
 }
 
-function executeBuilder(director: Director){
-  const builder = new ConcreteSquareBuilder(10);
-  director.setSquareBuilder(builder);
-  console.log("Square Builder");
-  director.buildSquare();
-  let squareArea = builder.getSquareArea();
-  console.log(`Square area: ${squareArea.area}`);
+function executeBuilder(director: Director, shape: string) {
+  switch (shape.toLowerCase()) {
+    case "square":
+      const builderSquare = new ConcreteSquareBuilder(10);
+      director.setSquareBuilder(builderSquare);
+      console.log("Square Builder");
+      director.buildSquare();
+      let squareArea = builderSquare.getSquareArea();
+      console.log(`Square area: ${squareArea.area}`);
+      break;
+    case "rectangle":
+      const builderRectangle = new ConcreteRectangleBuilder(10, 5);
+      director.setRectangleBuilder(builderRectangle);
+      console.log("Rectangle Builder");
+      director.buildRectangle();
+      let rectangleArea = builderRectangle.getRectangleArea();
+      console.log(`Rectangle Builder: ${rectangleArea.area}`);
+  }
 }
 
 const director = new Director()
-executeBuilder(director);
+executeBuilder(director, 'square');
 
 function executeFactoryFunction() {
   console.log("It displays the area of a square with sides equal 9.");
