@@ -1,4 +1,4 @@
-import { SquareBuilder } from "../interfaces/interface.square.builder";
+import { SquareBuilder } from "../../interfaces/interface.square.builder";
 import { Square } from "./square";
 
 export class ConcreteSquareBuilder implements SquareBuilder {

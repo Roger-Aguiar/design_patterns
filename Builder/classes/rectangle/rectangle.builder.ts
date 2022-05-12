@@ -1,4 +1,4 @@
-import { RectangleBuilder } from "../interfaces/interface.rectangle.builder";
+import { RectangleBuilder } from "../../interfaces/interface.rectangle.builder";
 import { Rectangle } from "./rectangle";
 
 export class ConcreteRectangleBuilder implements RectangleBuilder {

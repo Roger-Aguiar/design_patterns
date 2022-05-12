@@ -1,8 +1,8 @@
 import { ConcreteShape } from "./AbstractFactory/classes/concrete.shape";
 import { AbstractFactory } from "./AbstractFactory/interfaces/abstract.factory";
 import { Director } from "./Builder/classes/director";
-import { ConcreteRectangleBuilder } from "./Builder/classes/rectangle.builder";
-import { ConcreteSquareBuilder } from "./Builder/classes/square.builder";
+import { ConcreteRectangleBuilder } from "./Builder/classes/rectangle/rectangle.builder";
+import { ConcreteSquareBuilder } from "./Builder/classes/square/square.builder";
 import { ConcreteCircle } from "./Factory/concrete_creator_classes/concrete.circle";
 import { ConcreteSquare } from "./Factory/concrete_creator_classes/concrete.square";
 import { ShapeCreator } from "./Factory/creator/shape.creator";
